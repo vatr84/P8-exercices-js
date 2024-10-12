@@ -1,13 +1,15 @@
 function convertToBinary() {
   const decimalInput = document.getElementById("decimalInput").value;
-  const decimalNumber = parseInt(decimalInput, 10);
 
-  // Vérifie que la saisie est bien un nombre entier valide
-  if (isNaN(decimalNumber)) {
-      // Laisser #binaryResult vide si l'entrée est invalide
+  // Vérifie que l'entrée est un nombre entier positif
+  if (!/^\d+$/.test(decimalInput)) {
+      // Si l'entrée contient des caractères non numériques, ne rien afficher
       document.getElementById("binaryResult").textContent = "";
       return;
   }
+
+  // Convertir l'entrée en nombre entier
+  const decimalNumber = parseInt(decimalInput, 10);
 
   // Convertir le nombre décimal en binaire
   const binaryResult = decimalNumber.toString(2);
