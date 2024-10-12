@@ -1,5 +1,25 @@
 // Créez votre fonction ici
+function calculate(a, b, operator) {
+  // Convertir a et b en nombres
+  a = Number(a);
+  b = Number(b);
 
+  switch (operator) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    case '*':
+      return a * b;
+    case '/':
+      if (b === 0) {
+        return "Division by zero is not allowed";
+      }
+      return a / b;
+    default:
+      return "Invalid operator";
+  }
+}
 // Exemples d'utilisation de la fonction
 console.log(calculate(5, 3, '+'));   // Affiche 8
 console.log(calculate(10, 4, '-'));  // Affiche 6
